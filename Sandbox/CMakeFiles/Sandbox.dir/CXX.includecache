@@ -1,0 +1,28 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/Users/ashishmittal/Karavan/Sandbox/src/Sandbox.cpp
+Karavan.h
+/Users/ashishmittal/Karavan/Sandbox/src/Karavan.h
+
+Karavan/src/Karavan.h
+Karavan/Application.h
+Karavan/src/Karavan/Application.h
+Karavan/EntryPoint.h
+Karavan/src/Karavan/EntryPoint.h
+
+Karavan/src/Karavan/Application.h
+stdio.h
+-
+Core.h
+Karavan/src/Karavan/Core.h
+
+Karavan/src/Karavan/Core.h
+
+Karavan/src/Karavan/EntryPoint.h
+
