@@ -1,4 +1,6 @@
-#include <stdio.h>
+#ifndef APPLICATION_H
+#define APPLICATION_H
+
 #include "Core.h"
 
 namespace Karavan {
@@ -13,3 +15,5 @@ namespace Karavan {
     // TO be defined in client
     Application* CreateApplication();
 }
+
+#endif

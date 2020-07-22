@@ -1,3 +1,4 @@
+
 #ifdef KV_PLATFORM_WINDOWS
     #ifdef KV_BUILD_DLL
          #define KARAVAN_API __declspec(dllexport)
@@ -8,3 +9,5 @@
     #define KARAVAN_API
 #endif
     
+	
+#define BIT(x) (1 << x)

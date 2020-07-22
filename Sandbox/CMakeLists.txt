@@ -8,6 +8,7 @@ set(CMAKE_CXX_STANDARD_REQUIRED True)
 link_directories(${PROJECT_SOURCE_DIR}/lib)
 
 #include directories
+include_directories(${PROJECT_SOURCE_DIR}/Karavan/vendor/spdlog/include)
 include_directories(${PROJECT_SOURCE_DIR}/Karavan/src)
 
 # add the executable

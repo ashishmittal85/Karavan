@@ -1,6 +1,9 @@
+#include "KVPCH.h"
 #include "Application.h"
+#include "Events/ApplicationEvent.h"
 
-namespace Karavan {
+namespace Karavan 
+{
     Application::Application()
     {
     }
@@ -12,6 +15,8 @@ namespace Karavan {
     void Application::Run()
     {
         printf("KARAVAN UP!\n");
+		WindowResizeEvent e(1280, 720);
+		//KV_TRACE(e);
         while(true);
     }
 }

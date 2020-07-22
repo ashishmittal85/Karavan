@@ -1,0 +1,6 @@
+[submodule "Karavan/vendor/spdlog"]
+	path = Karavan/vendor/spdlog
+	url = https://github.com/gabime/spdlog.git
+[submodule "Karavan/vendor/GLFW"]
+	path = Karavan/vendor/GLFW
+	url = https://github.com/glfw/glfw.git
