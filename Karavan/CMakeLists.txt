@@ -22,14 +22,18 @@ include_directories(${PROJECT_SOURCE_DIR}/Karavan/src/)
 
 # Source files
 set(SRC_FILES ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Application.cpp
-              ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Log.cpp)
+              ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Log.cpp
+              ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/MacWindow.cpp)
 
 # Add the library
 add_library(Karavan SHARED ${SRC_FILES})
 set_target_properties(Karavan PROPERTIES XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${PROJECT_SOURCE_DIR}/Karavan/KVPCH.h"
                                             XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES")
 # Link the libraries
-#target_link_libraries(Karavan GLFW)
+target_link_libraries(Karavan glfw)
+
+find_package(OpenGL REQUIRED)
+target_link_libraries(Karavan OpenGL::GL)
 
 # install command
 install(TARGETS Karavan DESTINATION ${PROJECT_SOURCE_DIR}/lib)

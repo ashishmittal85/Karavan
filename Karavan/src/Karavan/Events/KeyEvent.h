@@ -1,27 +1,27 @@
 #ifndef KEYEVENT_H
 #define KEYEVENT_H
 
-#include "Events/Event.h"
+#include "Event.h"
 
 namespace Karavan {
 
     class KeyEvent : public Event
     {
     public:
-        KeyCode GetKeyCode() const { return m_KeyCode; }
+        inline int GetKeyCode() const { return m_KeyCode; }
 
         EVENT_CLASS_CATEGORY(EventCategoryKeyboard | EventCategoryInput)
     protected:
-        KeyEvent(KeyCode keycode)
+        KeyEvent(int keycode)
             : m_KeyCode(keycode) {}
 
-        KeyCode m_KeyCode;
+        int m_KeyCode;
     };
 
     class KeyPressedEvent : public KeyEvent
     {
     public:
-        KeyPressedEvent(KeyCode keycode, int repeatCount)
+        KeyPressedEvent(int keycode, int repeatCount)
             : KeyEvent(keycode), m_RepeatCount(repeatCount) {}
 
         int GetRepeatCount() const { return m_RepeatCount; }
@@ -41,7 +41,7 @@ namespace Karavan {
     class KeyReleasedEvent : public KeyEvent
     {
     public:
-        KeyReleasedEvent(KeyCode keycode)
+        KeyReleasedEvent(int keycode)
             : KeyEvent(keycode) {}
 
         std::string ToString() const override
@@ -54,10 +54,10 @@ namespace Karavan {
         EVENT_CLASS_TYPE(EventType::KeyReleased)
     };
 
-    class KeyTypedEvent : public KeyEvent
+    /*class KeyTypedEvent : public KeyEvent
     {
     public:
-        KeyTypedEvent(KeyCode keycode)
+        KeyTypedEvent(int keycode)
             : KeyEvent(keycode) {}
 
         std::string ToString() const override
@@ -68,6 +68,6 @@ namespace Karavan {
         }
 
         EVENT_CLASS_TYPE(EventType::KeyTyped)
-    };
+    };*/
 }
 #endif

@@ -1,6 +1,6 @@
 #ifndef APPLICATIONEVENT_H
 #define APPLICATIONEVENT_H
-#include "Events/Event.h"
+#include "Event.h"
 #include <sstream>
 
 namespace Karavan {

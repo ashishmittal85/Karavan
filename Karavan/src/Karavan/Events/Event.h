@@ -1,7 +1,8 @@
 #ifndef EVENT_H
 #define EVENT_H
 
-#include "Log.h"
+#include "../Log.h"
+#include <sstream>
 
 namespace Karavan 
 {

@@ -2,6 +2,7 @@
 #define APPLICATION_H
 
 #include "Core.h"
+#include "Window.h"
 
 namespace Karavan {
     class KARAVAN_API Application 
@@ -10,10 +11,17 @@ namespace Karavan {
         Application();
         virtual ~Application();
         void Run();
+        void OnEvent(Event& e);
+
+    private:
+        std::unique_ptr<Window> m_Window;
+        bool m_Running = true;
     };
 
     // TO be defined in client
     Application* CreateApplication();
+
+
 }
 
 #endif

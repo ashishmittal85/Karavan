@@ -34,4 +34,13 @@ namespace Karavan
 #define KV_ERROR(...)    ::Karavan::Log::GetClientLogger()->error(__VA_ARGS__)
 #define KV_FATAL(...)    ::Karavan::Log::GetClientLogger()->fatal(__VA_ARGS__)
 
+#ifdef KV_ENABLE_ASSERTS
+    #define KV_ASSERT(x, ...) { if(!(x)) { KV_ERROR("Assertion failed: {0}", __VA_ARGS__); __builtin_trap(); } }
+    #define KV_CORE_ASSERT(x, ...) { if(!(x)) { KV_CORE_ERROR("Assertion failed: {0}", __VA_ARGS__); __builtin_trap(); } }
+#else
+    #define KV_ASSERT(x, ...)
+    #define KV_CORE_ASSERT(x, ...)
+#endif
+
+
 #endif
