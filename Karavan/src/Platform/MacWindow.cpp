@@ -1,4 +1,6 @@
 #include "Platform/MacWindow.h"
+#include "glad/glad.h"
+
 
 namespace Karavan {
 
@@ -51,6 +53,8 @@ namespace Karavan {
 
             m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
             glfwMakeContextCurrent(m_Window);
+
+            int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
             glfwSetWindowUserPointer(m_Window, &m_Data);
             SetVSync(true);
             ++s_GLFWWindowCount;

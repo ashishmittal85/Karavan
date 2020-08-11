@@ -6,6 +6,7 @@ if(WIN32)
     add_definitions(KV_BUILD_DLL)
 endif()
 
+add_subdirectory(vendor/GLAD)
 add_subdirectory(vendor/spdlog)
 add_subdirectory(vendor/GLFW)
 
@@ -17,6 +18,7 @@ link_directories(Karavan ${PROJECT_SOURCE_DIR}/lib)
 # Include path
 include_directories(${PROJECT_SOURCE_DIR}/Karavan/vendor/GLFW/include)
 include_directories(${PROJECT_SOURCE_DIR}/Karavan/vendor/spdlog/include)
+include_directories(${PROJECT_SOURCE_DIR}/Karavan/vendor/GLAD/include)
 include_directories(${PROJECT_SOURCE_DIR}/Karavan/src/Karavan)
 include_directories(${PROJECT_SOURCE_DIR}/Karavan/src/)
 
@@ -33,9 +35,10 @@ set_target_properties(Karavan PROPERTIES XCODE_ATTRIBUTE_GCC_PREFIX_HEADER "${PR
                                             XCODE_ATTRIBUTE_GCC_PRECOMPILE_PREFIX_HEADER "YES")
 # Link the libraries
 target_link_libraries(Karavan glfw)
+target_link_libraries(Karavan glad)
 
-find_package(OpenGL REQUIRED)
-target_link_libraries(Karavan OpenGL::GL)
+#find_package(OpenGL REQUIRED)
+#target_link_libraries(Karavan OpenGL::GL)
 
 # install command
 install(TARGETS Karavan DESTINATION ${PROJECT_SOURCE_DIR}/lib)
