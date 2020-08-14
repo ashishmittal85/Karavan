@@ -45,6 +45,12 @@ namespace Karavan {
             //HZ_PROFILE_SCOPE("glfwInit");
             int success = glfwInit();
             KV_CORE_ASSERT(success, "Could not initialize GLFW!");
+            glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+            glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 1);
+            glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
+            #if defined(__APPLE__)
+            glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GLFW_TRUE);
+            #endif    
             glfwSetErrorCallback(GLFWErrorCallback);
         }
 
