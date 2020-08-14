@@ -4,6 +4,4 @@
 [submodule "Karavan/vendor/GLFW"]
 	path = Karavan/vendor/GLFW
 	url = https://github.com/glfw/glfw.git
-[submodule "Karavan/vendor/imgui"]
-	path = Karavan/vendor/imgui
-	url = https://github.com/TheCherno/imgui.git
+	
