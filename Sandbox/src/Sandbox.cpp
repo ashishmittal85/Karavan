@@ -11,12 +11,12 @@ public:
 
     void OnUpdate() override
     {
-        KV_INFO("ExampleLayer::Update");
+        //KV_INFO("ExampleLayer::Update");
     }
 
     void OnEvent(Karavan::Event& e) override
     {
-        KV_TRACE("{0}", e.ToString());
+        //KV_TRACE("{0}", e.ToString());
     }
 };
 

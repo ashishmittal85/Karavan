@@ -2,6 +2,7 @@
 #include "Application.h"
 #include "Events/ApplicationEvent.h"
 #include <glad/glad.h>
+#include "Input.h"
 
 namespace Karavan 
 {
@@ -38,7 +39,7 @@ namespace Karavan
     {
         EventDispatcher dispatcher(e);
         dispatcher.Dispatch<WindowCloseEvent>(BIND_EVENT_FN(OnWindowClose));
-        KV_CORE_INFO("{0}", e.ToString());
+        //KV_CORE_INFO("{0}", e.ToString());
 
         for (auto it = m_LayerStack.end(); it != m_LayerStack.begin();)
         {
@@ -58,6 +59,9 @@ namespace Karavan
 
             for (Layer* layer : m_LayerStack)
                 layer->OnUpdate();
+
+            auto[x, y] = Input::GetMousePosition();
+            KV_CORE_TRACE("{0}, {1}", x, y);
 
             m_Window->OnUpdate();
         }

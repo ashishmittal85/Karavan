@@ -121,8 +121,8 @@ namespace Karavan {
         {
             WindowData& data = *(WindowData*)glfwGetWindowUserPointer(window);
 
-            //KeyTypedEvent event(keycode);
-            //data.EventCallback(event);
+            KeyTypedEvent event(keycode);
+            data.EventCallback(event);
         });
 
         glfwSetMouseButtonCallback(m_Window, [](GLFWwindow* window, int button, int action, int mods)

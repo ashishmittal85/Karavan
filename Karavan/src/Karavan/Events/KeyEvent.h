@@ -38,6 +38,22 @@ namespace Karavan {
         int m_RepeatCount;
     };
 
+    class KeyTypedEvent : public KeyEvent
+    {
+    public:
+        KeyTypedEvent(int keycode)
+            : KeyEvent(keycode) {}
+
+        std::string ToString() const override
+        {
+            std::stringstream ss;
+            ss << "KeyTypedEvent: " << m_KeyCode;
+            return ss.str();
+        }
+
+        EVENT_CLASS_TYPE(EventType::KeyTyped)
+    };
+
     class KeyReleasedEvent : public KeyEvent
     {
     public:
@@ -54,20 +70,5 @@ namespace Karavan {
         EVENT_CLASS_TYPE(EventType::KeyReleased)
     };
 
-    /*class KeyTypedEvent : public KeyEvent
-    {
-    public:
-        KeyTypedEvent(int keycode)
-            : KeyEvent(keycode) {}
-
-        std::string ToString() const override
-        {
-            std::stringstream ss;
-            ss << "KeyTypedEvent: " << m_KeyCode;
-            return ss.str();
-        }
-
-        EVENT_CLASS_TYPE(EventType::KeyTyped)
-    };*/
 }
 #endif
