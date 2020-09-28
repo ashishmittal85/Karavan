@@ -5,3 +5,6 @@
 	path = Karavan/vendor/GLFW
 	url = https://github.com/glfw/glfw.git
 	
+[submodule "Karavan/vendor/glm"]
+	path = Karavan/vendor/glm
+	url = https://github.com/g-truc/glm.git

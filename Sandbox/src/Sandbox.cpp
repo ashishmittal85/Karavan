@@ -11,7 +11,8 @@ public:
 
     void OnUpdate() override
     {
-        //KV_INFO("ExampleLayer::Update");
+        if (Karavan::Input::IsKeyPressed(KV_KEY_TAB))
+            KV_TRACE("Tab key is pressed");
     }
 
     void OnEvent(Karavan::Event& e) override
