@@ -31,7 +31,7 @@ include_directories(${PROJECT_SOURCE_DIR}/Karavan/src/Platform/OpenGL)
 
 # Source files
 set(SRC_FILES ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Log.cpp
-              ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/OpenGL/ImGuiOpenGLRenderer.cpp
+              ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/ImGui/ImGuiBuild.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/ImGui/ImGuiLayer.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Layer.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/LayerStack.cpp

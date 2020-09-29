@@ -4,6 +4,7 @@
 #include "Core.h"
 #include "Window.h"
 #include "LayerStack.h"
+#include "ImGui/ImGuiLayer.h"
 
 namespace Karavan {
     class KARAVAN_API Application 
@@ -21,6 +22,7 @@ namespace Karavan {
         inline Window& GetWindow() { return *m_Window; }
     private:
         std::unique_ptr<Window> m_Window;
+        ImGuiLayer* m_ImGuiLayer;
         bool m_Running = true;
         LayerStack m_LayerStack;
     private:
