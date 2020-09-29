@@ -2,7 +2,10 @@
 #define MACWINDOW_H
 
 #include "Window.h"
+#include "Renderer/GraphicsContext.h"
+
 #include "Log.h"
+
 #define GLFW_INCLUDE_NONE
 #include <GLFW/glfw3.h>
 
@@ -30,7 +33,7 @@ namespace Karavan {
         virtual void Shutdown();
     private:
         GLFWwindow* m_Window;
-        //Scope<GraphicsContext> m_Context;
+        GraphicsContext* m_Context;
 
         struct WindowData
         {

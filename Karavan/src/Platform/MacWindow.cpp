@@ -1,6 +1,6 @@
 #include "Platform/MacWindow.h"
-#include "glad/glad.h"
 
+#include "Platform/OpenGL/OpenGLContext.h"
 
 namespace Karavan {
 
@@ -58,9 +58,9 @@ namespace Karavan {
             //HZ_PROFILE_SCOPE("glfwCreateWindow");
 
             m_Window = glfwCreateWindow((int)props.Width, (int)props.Height, m_Data.Title.c_str(), nullptr, nullptr);
-            glfwMakeContextCurrent(m_Window);
+            m_Context = new OpenGLContext(m_Window);
+            m_Context->Init();
 
-            int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
             glfwSetWindowUserPointer(m_Window, &m_Data);
             SetVSync(true);
             ++s_GLFWWindowCount;
@@ -181,8 +181,7 @@ namespace Karavan {
         //HZ_PROFILE_FUNCTION();
 
         glfwPollEvents();
-        glfwSwapBuffers(m_Window);
-        //m_Context->SwapBuffers();
+        m_Context->SwapBuffers();
     }
 
     void MacWindow::SetVSync(bool enabled)

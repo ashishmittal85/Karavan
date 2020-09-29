@@ -35,6 +35,7 @@ set(SRC_FILES ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Log.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/ImGui/ImGuiLayer.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Layer.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/LayerStack.cpp
+              ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/OpenGL/OpenGLContext.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/MacInput.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/MacWindow.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Application.cpp)
