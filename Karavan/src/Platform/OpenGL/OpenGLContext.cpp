@@ -20,6 +20,11 @@ namespace Karavan {
         glfwMakeContextCurrent(m_WindowHandle);
         int status = gladLoadGLLoader((GLADloadproc)glfwGetProcAddress);
         KV_CORE_ASSERT(status, "Failed to initialize GLAD!");
+
+        KV_CORE_INFO("OpenGL Info:");
+        KV_CORE_INFO("  Vendor:   {0}", glGetString(GL_VENDOR));
+        KV_CORE_INFO("  Renderer: {0}", glGetString(GL_RENDERER));
+        KV_CORE_INFO("  Version:  {0}", glGetString(GL_VERSION));
     }
 
     void OpenGLContext::SwapBuffers()
