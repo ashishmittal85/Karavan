@@ -10,4 +10,4 @@
 	url = https://github.com/g-truc/glm.git
 [submodule "Karavan/vendor/imgui"]
 	path = Karavan/vendor/imgui
-	url = git@github.com:ashishmittal85/imgui.git
+	url = https://github.com/ashishmittal85/imgui.git
