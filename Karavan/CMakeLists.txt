@@ -36,8 +36,10 @@ set(SRC_FILES ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Log.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Layer.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/LayerStack.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Renderer/Renderer.cpp
+              ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Renderer/VertexArray.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Renderer/Buffer.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Renderer/Shader.cpp
+              ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/OpenGL/OpenGLVertexArray.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/OpenGL/OpenGLBuffer.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/OpenGL/OpenGLContext.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/MacInput.cpp
