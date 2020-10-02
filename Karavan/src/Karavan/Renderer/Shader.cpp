@@ -30,7 +30,7 @@ namespace Karavan {
             glDeleteShader(vertexShader);
 
             // Use the infoLog as you see fit.
-            KV_CORE_ERROR("{0}", infoLog.data());
+            KV_CORE_ERROR("Vertex Shader Compilation: {0}", infoLog.data());
             KV_CORE_ASSERT(false, "Vertex shader compilation failure!");
 
             // In this simple program, we'll just leave
@@ -63,7 +63,7 @@ namespace Karavan {
             // Either of them. Don't leak shaders.
             glDeleteShader(vertexShader);
 
-            KV_CORE_ERROR("{0}", infoLog.data());
+            KV_CORE_ERROR("Fragment Shader Compilation: {0}", infoLog.data());
             KV_CORE_ASSERT(false, "Fragment shader compilation failure!");
     
             // In this simple program, we'll just leave
@@ -101,7 +101,7 @@ namespace Karavan {
             glDeleteShader(fragmentShader);
 
             // Use the infoLog as you see fit.
-            KV_CORE_ERROR("{0}", infoLog.data());
+            KV_CORE_ERROR("Program Linking: {0}", infoLog.data());
             KV_CORE_ASSERT(false, "Program linking failure!");
             // In this simple program, we'll just leave
             return;
