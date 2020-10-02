@@ -30,8 +30,9 @@ namespace Karavan {
         LayerStack m_LayerStack;
         std::shared_ptr<Shader> m_Shader;
         std::shared_ptr<VertexArray> m_VertexArray;
-        std::shared_ptr<VertexBuffer> m_VertexBuffer;
-        std::shared_ptr<IndexBuffer> m_IndexBuffer;
+
+        std::shared_ptr<Shader> m_BlueShader;
+        std::shared_ptr<VertexArray> m_SquareVA;
     private:
         static Application* s_Instance;
     };
