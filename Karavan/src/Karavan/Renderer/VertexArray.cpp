@@ -7,10 +7,10 @@ namespace Karavan {
 
     VertexArray* VertexArray::Create()
     {
-        switch (Renderer::GetAPI())
+        switch (RendererAPI::GetAPI())
         {
-        case RendererAPI::None:    KV_CORE_ASSERT(false, "RendererAPI::None not supported!"); return nullptr;
-        case RendererAPI::OpenGL:  return new OpenGLVertexArray();
+        case RendererAPI::API::None:    KV_CORE_ASSERT(false, "RendererAPI::None not supported!"); return nullptr;
+        case RendererAPI::API::OpenGL:  return new OpenGLVertexArray();
         }
 
         KV_CORE_ASSERT(false, "Unknown RendererAPI");
