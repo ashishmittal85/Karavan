@@ -2,6 +2,8 @@
 #include "Karavan/Log.h"
 #include "Karavan/ImGui/ImGuiLayer.h"
 
+#include "Karavan/Core/Timestep.h"
+
 // Input section
 #include "Karavan/Input.h"
 #include "Karavan/KeyCodes.h"
