@@ -3,8 +3,8 @@
 
 #include <glm/glm.hpp>
 #include <memory>
-#include "Renderer/VertexArray.h"
-#include "Renderer/RendererAPI.h"
+#include "VertexArray.h"
+#include "RendererAPI.h"
 
 namespace Karavan {
 
