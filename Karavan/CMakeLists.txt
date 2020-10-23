@@ -44,6 +44,7 @@ set(SRC_FILES ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Log.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Renderer/RenderCommand.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Renderer/Renderer.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Renderer/OrthographicCamera.cpp
+              ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/OpenGL/OpenGLShader.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/OpenGL/OpenGLBuffer.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/OpenGL/OpenGLContext.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/MacInput.cpp

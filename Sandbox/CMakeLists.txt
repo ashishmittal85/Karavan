@@ -9,6 +9,7 @@ link_directories(${PROJECT_SOURCE_DIR}/lib)
 
 #include directories
 include_directories(${PROJECT_SOURCE_DIR}/Karavan/vendor/spdlog/include)
+include_directories(${PROJECT_SOURCE_DIR}/Karavan/vendor/imgui)
 include_directories(${PROJECT_SOURCE_DIR}/Karavan/vendor/glm)
 include_directories(${PROJECT_SOURCE_DIR}/Karavan/src)
 
