@@ -21,7 +21,7 @@ public:
              0.0f,  0.5f, 0.0f, 0.8f, 0.8f, 0.2f, 1.0f
         };
 
-        std::shared_ptr<Karavan::VertexBuffer> vertexBuffer;
+        Karavan::Ref<Karavan::VertexBuffer> vertexBuffer;
         vertexBuffer.reset(Karavan::VertexBuffer::Create(vertices, sizeof(vertices)));
 
         Karavan::BufferLayout layout = {
@@ -33,7 +33,7 @@ public:
         m_VertexArray->AddVertexBuffer(vertexBuffer);
 
         uint32_t indices[3] = {0, 1, 2};
-        std::shared_ptr<Karavan::IndexBuffer> indexBuffer;
+        Karavan::Ref<Karavan::IndexBuffer> indexBuffer;
         indexBuffer.reset(Karavan::IndexBuffer::Create(indices, sizeof(indices)/sizeof(uint32_t)));
         m_VertexArray->SetIndexBuffer(indexBuffer);
 
@@ -45,7 +45,7 @@ public:
             -0.5f,  0.5f, 0.0f
         };
 
-        std::shared_ptr<Karavan::VertexBuffer> squareVB;
+        Karavan::Ref<Karavan::VertexBuffer> squareVB;
         squareVB.reset(Karavan::VertexBuffer::Create(squareVertices, sizeof(squareVertices)));
         squareVB->SetLayout({
             { Karavan::ShaderDataType::Float3, "a_Position" }
@@ -53,7 +53,7 @@ public:
         m_SquareVA->AddVertexBuffer(squareVB);
 
         uint32_t squareIndices[6] = { 0, 1, 2, 2, 3, 0 };
-        std::shared_ptr<Karavan::IndexBuffer> squareIB;
+        Karavan::Ref<Karavan::IndexBuffer> squareIB;
         squareIB.reset(Karavan::IndexBuffer::Create(squareIndices, sizeof(squareIndices) / sizeof(uint32_t)));
         m_SquareVA->SetIndexBuffer(squareIB);
 
@@ -189,11 +189,11 @@ public:
     }
 
 private:
-    std::shared_ptr<Karavan::Shader> m_Shader;
-    std::shared_ptr<Karavan::VertexArray> m_VertexArray;
+    Karavan::Ref<Karavan::Shader> m_Shader;
+    Karavan::Ref<Karavan::VertexArray> m_VertexArray;
 
-    std::shared_ptr<Karavan::Shader> m_FlatColorShader;
-    std::shared_ptr<Karavan::VertexArray> m_SquareVA;
+    Karavan::Ref<Karavan::Shader> m_FlatColorShader;
+    Karavan::Ref<Karavan::VertexArray> m_SquareVA;
 
     Karavan::OrthographicCamera m_Camera;
     glm::vec3 m_CameraPosition;
