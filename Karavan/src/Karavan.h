@@ -13,8 +13,10 @@
 #include "Karavan/Renderer/Renderer.h"
 #include "Karavan/Renderer/RenderCommand.h"
 #include "Karavan/Renderer/Shader.h"
+#include "Karavan/Renderer/Texture.h"
 #include "Karavan/Renderer/Buffer.h"
 #include "Karavan/Renderer/VertexArray.h"
+
 #include "Karavan/Renderer/OrthographicCamera.h"
 // -------------------------------------
 // -------Entry Point-------

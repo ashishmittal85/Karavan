@@ -25,12 +25,14 @@ include_directories(${PROJECT_SOURCE_DIR}/Karavan/vendor/GLAD/include)
 include_directories(${PROJECT_SOURCE_DIR}/Karavan/vendor/imgui/)
 include_directories(${PROJECT_SOURCE_DIR}/Karavan/vendor/glm/)
 include_directories(${PROJECT_SOURCE_DIR}/Karavan/vendor/imgui/examples)
+include_directories(${PROJECT_SOURCE_DIR}/Karavan/vendor/stb_image/)
 include_directories(${PROJECT_SOURCE_DIR}/Karavan/src/Karavan)
 include_directories(${PROJECT_SOURCE_DIR}/Karavan/src/)
 include_directories(${PROJECT_SOURCE_DIR}/Karavan/src/Platform/OpenGL)
 
 # Source files
-set(SRC_FILES ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Log.cpp
+set(SRC_FILES ${PROJECT_SOURCE_DIR}/Karavan/vendor/stb_image/stb_image.cpp
+              ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Log.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/ImGui/ImGuiBuild.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/ImGui/ImGuiLayer.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Layer.cpp
@@ -39,12 +41,14 @@ set(SRC_FILES ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Log.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Renderer/VertexArray.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Renderer/Buffer.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Renderer/Shader.cpp
+              ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Renderer/Texture.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/OpenGL/OpenGLRendererAPI.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/OpenGL/OpenGLVertexArray.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Renderer/RenderCommand.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Renderer/Renderer.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Karavan/Renderer/OrthographicCamera.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/OpenGL/OpenGLShader.cpp
+              ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/OpenGL/OpenGLTexture.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/OpenGL/OpenGLBuffer.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/OpenGL/OpenGLContext.cpp
               ${PROJECT_SOURCE_DIR}/Karavan/src/Platform/MacInput.cpp
