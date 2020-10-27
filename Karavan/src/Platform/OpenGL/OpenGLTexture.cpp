@@ -18,6 +18,18 @@ namespace Karavan {
         m_Width = width;
         m_Height = height;
 
+        GLenum internalFormat = 0, dataFormat = 0;
+
+        if (channels == 4) {
+            internalFormat = GL_RGBA8;
+            dataFormat =GL_RGBA;
+        } else if (channels == 3) {
+            internalFormat = GL_RGBA;
+            dataFormat =GL_RGB;
+        }
+
+        KV_CORE_ASSERT(internalFormat & dataFormat, "Format not supported!");
+
         glGenTextures(1, &m_RendererID);
         glBindTexture(GL_TEXTURE_2D, m_RendererID);
         //glTextureStorage2D(m_RendererID, 1, GL_RGB8, m_Width, m_Height);
@@ -25,7 +37,7 @@ namespace Karavan {
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, m_Width, m_Height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        glTexImage2D(GL_TEXTURE_2D, 0, internalFormat, m_Width, m_Height, 0, dataFormat, GL_UNSIGNED_BYTE, data);
 
         stbi_image_free(data);
 
