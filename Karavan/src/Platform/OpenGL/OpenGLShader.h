@@ -3,6 +3,10 @@
 
 #include "Karavan/Renderer/Shader.h"
 #include <glm/glm.hpp>
+//#include <glad/glad.h>
+#include <unordered_map>
+
+typedef unsigned int GLenum;
 
 namespace Karavan
 {
@@ -10,6 +14,7 @@ namespace Karavan
     {
     public:
         OpenGLShader(const std::string& vertexSrc, const std::string& fragmentSrc);
+        OpenGLShader(const std::string& filepath);
         ~OpenGLShader();
 
         void Bind() const;
@@ -24,6 +29,10 @@ namespace Karavan
 
         void UploadUniformMat3(const std::string& name, const glm::mat3& matrix);
         void UploadUniformMat4(const std::string& name, const glm::mat4& matrix);
+    private:
+        std::string ReadFile(const std::string& filepath);
+        std::unordered_map<GLenum, std::string> PreProcess(const std::string& source);
+        void Compile(const std::unordered_map<GLenum, std::string>& shaderSources);
     private:
         uint32_t m_RendererID;
     };

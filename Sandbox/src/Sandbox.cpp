@@ -126,50 +126,16 @@ public:
            }
           )";
 
-          m_FlatColorShader.reset(Karavan::Shader::Create(flatShaderVertexSrc, flatShaderFragmentSrc));
-
-          std::string textureShaderVertexSrc = R"(
-            #version 330 core
-
-            layout(location = 0) in vec3 a_Position;
-            layout(location = 1) in vec2 a_TexCoord;
+        m_FlatColorShader.reset(Karavan::Shader::Create(flatShaderVertexSrc, flatShaderFragmentSrc));
 
 
-            uniform mat4 u_ViewProjection;
-            uniform mat4 u_Transform;
+        m_TextureShader.reset(Karavan::Shader::Create("/Users/ashishmittal/Karavan/Sandbox/assets/shaders/Texture.glsl"));
+        m_Texture = Karavan::Texture2D::Create("/Users/ashishmittal/Karavan/Sandbox/assets/textures/Checkerboard.png");
 
- 
-            out vec2 v_TexCoord;
+        m_RedSmokeTexture = Karavan::Texture2D::Create("/Users/ashishmittal/Karavan/Sandbox/assets/textures/RedSmoke.png");
 
-            void main()
-            {
-                 v_TexCoord = a_TexCoord;
-                 gl_Position = u_ViewProjection * u_Transform * vec4(a_Position, 1.0);
-            }
-           )";
-
-           std::string textureShaderFragmentSrc = R"(
-             #version 330 core
-
-             layout(location = 0) out vec4 color;
-
-             in vec2 v_TexCoord;
-
-             uniform sampler2D u_Texture;
-
-             void main()
-             {
-                 color = texture(u_Texture, v_TexCoord);
-             }
-            )";
-
-            m_TextureShader.reset(Karavan::Shader::Create(textureShaderVertexSrc, textureShaderFragmentSrc));
-            m_Texture = Karavan::Texture2D::Create("/Users/ashishmittal/Karavan/Sandbox/assets/textures/Checkerboard.png");
-
-            m_RedSmokeTexture = Karavan::Texture2D::Create("/Users/ashishmittal/Karavan/Sandbox/assets/textures/RedSmoke.png");
-
-            std::dynamic_pointer_cast<Karavan::OpenGLShader>(m_TextureShader)->Bind();
-            std::dynamic_pointer_cast<Karavan::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
+        std::dynamic_pointer_cast<Karavan::OpenGLShader>(m_TextureShader)->Bind();
+        std::dynamic_pointer_cast<Karavan::OpenGLShader>(m_TextureShader)->UploadUniformInt("u_Texture", 0);
     }
 
     void OnUpdate(Karavan::Timestep ts) override
